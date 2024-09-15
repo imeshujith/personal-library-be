@@ -2,9 +2,7 @@ import logging
 
 from app.domain.book import BookService
 
-# Set up logging
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
 
 # Initialize the BookService
 def get_book_service() -> BookService:

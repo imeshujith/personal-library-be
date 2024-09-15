@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Set up logging
 logger = logging.getLogger(__name__)
 
 # Define the SQLite URL

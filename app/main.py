@@ -7,7 +7,6 @@ from app.api.book import router as book_routes
 from app.config import settings
 import logging
 
-# Set up logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -15,24 +14,22 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-# Create the FastAPI app
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",  # React development server
-    # Add other origins as needed
+    "http://localhost:3000",
+    "http://ec2-18-141-218-77.ap-southeast-1.compute.amazonaws.com"
 ]
 
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # List of allowed origins
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all HTTP methods (GET, POST, etc.)
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Include the authentication routes
 app.include_router(auth_routes)
 app.include_router(book_routes)
 

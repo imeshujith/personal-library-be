@@ -6,10 +6,8 @@ from app.domain.db import SessionLocal
 
 from app.models.user import User
 
-# Set up logging
 logger = logging.getLogger(__name__)
 
-# Database Service to interact with the DB
 class DatabaseService:
     def __init__(self):
         self.db: Session = SessionLocal()

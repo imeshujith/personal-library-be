@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-# Load environment variables from .env file
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
@@ -23,5 +22,4 @@ class Settings:
     DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./test.db")
 
 
-# Instantiate the settings to be used throughout the app
 settings = Settings()
