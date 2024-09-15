@@ -19,10 +19,15 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://ec2-18-141-218-77.ap-southeast-1.compute.amazonaws.com",
+        "http://ec2-18-141-218-77.ap-southeast-1.compute.amazonaws.com:80",
+        "http://0.0.0.0",
+        "http://0.0.0.0:80",
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allows all methods (GET, POST, PUT, DELETE, etc.)
+    allow_headers=["*"],  # Allows all headers
 )
 
 app.include_router(auth_routes)
