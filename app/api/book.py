@@ -4,7 +4,7 @@ from app.application.book import add_book, get_books, get_book_by_id, search_boo
 from app.schemas.book import BookResponse, BookCreate, BookUpdate, LibrarySummary, PaginatedBooksResponse
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from typing import List
-router = APIRouter(prefix="api/v1")
+router = APIRouter(prefix="/api/v1")
 
 @router.post("/books", response_model=BookResponse)
 async def create_book(book: BookCreate, user_id: int = Depends(get_current_user)):

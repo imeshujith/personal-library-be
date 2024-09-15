@@ -9,7 +9,7 @@ from app.domain.auth import DatabaseService
 from app.schemas.auth import TokenRefreshRequest
 from app.schemas.user import UserCreate
 
-router = APIRouter(prefix="api/v1")
+router = APIRouter(prefix="/api/v1")
 
 # Register a new user
 @router.post("/signup", response_model=Token)
