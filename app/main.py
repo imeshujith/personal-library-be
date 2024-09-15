@@ -16,15 +16,10 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",
-    "http://ec2-18-141-218-77.ap-southeast-1.compute.amazonaws.com"
-]
-
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
